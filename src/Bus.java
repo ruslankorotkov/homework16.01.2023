@@ -24,7 +24,7 @@ public class Bus extends Transport<DriverD> {
     private PassengerCapacity places;
 
 
-    public Bus(String brand, String model, double engineVolume, DriverD driver, Integer places)  {
+    public Bus(String brand, String model, double engineVolume, DriverD driver, Integer places) {
         super(brand, model, engineVolume, driver);
         if (places <= 10) {
             this.places = PassengerCapacity.EXTRA_SMALL;
@@ -59,6 +59,7 @@ public class Bus extends Transport<DriverD> {
 
     @Override
     public void getDiagnosed() {
+        throw new RuntimeException(" Автобусы диагностику проходить не могут ");
     }
 
     @Override
@@ -88,5 +89,4 @@ public class Bus extends Transport<DriverD> {
     public String toString() {
         return " АВТОБУС " + super.toString() + " Вместимость " + places + " мест ";
     }
-
 }

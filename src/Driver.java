@@ -12,7 +12,7 @@ public abstract class Driver {
         if (driverLicense == true) {
             this.driverLicense = driverLicense;
         } else if (driverLicense == false) {
-            throw new IllegalArgumentException(" Необходимо указать тип прав! .");
+            throw new RuntimeException(" Необходимо указать тип прав! .");
         }
         if (experience == null || experience.isEmpty() || experience.isBlank()) {
             this.experience = "default";

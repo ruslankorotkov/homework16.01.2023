@@ -1,3 +1,4 @@
+import java.io.File;
 
 public abstract class Transport<T extends Driver> implements Competing {
     private String brand;
@@ -7,12 +8,12 @@ public abstract class Transport<T extends Driver> implements Competing {
 
     public Transport(String brand, String model, double engineVolume, T driver) {
         if (brand == null || brand.isEmpty() || brand.isBlank()) {
-            throw new IllegalArgumentException(" Марка должна быть указана. ");
+            this.brand = " default ";
         } else {
             this.brand = brand;
         }
         if (model == null || model.isEmpty() || model.isBlank()) {
-            throw new IllegalArgumentException(" Модель должна быть указана. ");
+            this.model = " default ";
         } else {
             this.model = model;
         }
@@ -69,6 +70,8 @@ public abstract class Transport<T extends Driver> implements Competing {
 
     public abstract void getDiagnosed();
 
+    {
+    }
 
     @Override
     public String toString() {

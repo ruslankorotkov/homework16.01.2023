@@ -4,7 +4,7 @@ public class DriverC extends Driver {
         if (driverLicense == true) {
             this.driverLicense = driverLicense;
         } else if (driverLicense == false) {
-            throw new IllegalArgumentException(" Необходимо указать тип прав! .");
+            throw new RuntimeException(" Необходимо указать тип прав! .");
         }
     }
 
@@ -23,5 +23,4 @@ public class DriverC extends Driver {
     public void refuel() {
         System.out.println("Водитель категории C " + getName() + " ЗАПРАВИЛ АВТО ");
     }
-
 }

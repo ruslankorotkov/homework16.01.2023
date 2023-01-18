@@ -1,6 +1,6 @@
 
-
 public class Car extends Transport<DriverB> {
+
     public enum BodyType {
         BODY_S("Седан"),
         BODY_H("Хетчбек"),
@@ -49,8 +49,8 @@ public class Car extends Transport<DriverB> {
 
     @Override
     public void getDiagnosed() {
+        System.out.println(" Пройти диагностику " + getBrand());
     }
-
 
 
     @Override

@@ -1,3 +1,4 @@
+import java.io.File;
 
 public class Truck extends Transport<DriverC> {
     public enum LoadCapacity {
@@ -17,6 +18,7 @@ public class Truck extends Transport<DriverC> {
     }
 
     private LoadCapacity capacity;
+
 
     public Truck(String brand, String model, double engineVolume, DriverC driver, double capacity) {
         super(brand, model, engineVolume, driver);
@@ -49,10 +51,8 @@ public class Truck extends Transport<DriverC> {
 
     @Override
     public void getDiagnosed() {
+        System.out.println(" Пройти диагностику " + getBrand());
     }
-
-
-
 
     @Override
     public void pitStop() {
@@ -72,15 +72,10 @@ public class Truck extends Transport<DriverC> {
 
     }
 
-    public LoadCapacity getCapacity() {
-        return capacity;
-    }
-
     @Override
     public String toString() {
         return " ГРУЗОВИК " + super.toString() +
                 " грузоподъёмность " + capacity.getCapacity();
-
     }
 }
 

@@ -4,7 +4,7 @@ public class DriverB extends Driver {
         if (driverLicense == true) {
             this.driverLicense = driverLicense;
         } else if (driverLicense == false) {
-            throw new IllegalArgumentException(" Необходимо указать тип прав! .");
+            throw new RuntimeException(" Необходимо указать тип прав! .");
         }
     }
 
