@@ -1,7 +1,7 @@
 public class Main {
     public static void main(String[] args) {
 //        DriverB ivan = new DriverB(" Иван ", true, " 6 лет ");
-        DriverB vova = new DriverB(" Вова ", false, " 32 лет ");
+        DriverB vova = new DriverB(" Вова ", true, " 32 лет ");
 //        DriverB zuric = new DriverB(" Зурик ", true, " 3 лет ");
 //        DriverB nik = new DriverB(" Николай ", true, " 6 лет ");
         DriverC oleg = new DriverC(" Олег ", true, " 5 лет ");
@@ -39,6 +39,9 @@ public class Main {
             } catch (RuntimeException e) {
                 System.out.println(" Произошла ошибка ");
                 System.out.println(e.getMessage());
+            }
+            finally {
+                System.out.println("Проверка завершена");
             }
         }
     }
