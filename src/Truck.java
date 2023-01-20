@@ -50,8 +50,8 @@ public class Truck extends Transport<DriverC> {
     }
 
     @Override
-    public void getDiagnosed() {
-        System.out.println(" Пройти диагностику " + getBrand());
+    public void diagnosed() {
+        System.out.println(" Проходит диагностику " + getBrand());
     }
 
     @Override

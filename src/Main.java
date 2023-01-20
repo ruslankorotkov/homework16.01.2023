@@ -1,11 +1,11 @@
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws CantDriveException {
 //        DriverB ivan = new DriverB(" Иван ", true, " 6 лет ");
         DriverB vova = new DriverB(" Вова ", true, " 32 лет ");
 //        DriverB zuric = new DriverB(" Зурик ", true, " 3 лет ");
 //        DriverB nik = new DriverB(" Николай ", true, " 6 лет ");
         DriverC oleg = new DriverC(" Олег ", true, " 5 лет ");
-        DriverD boris = new DriverD(" Борис ", true, " 7 лет ");
+        DriverD boris = new DriverD(" Борис ", false, " 7 лет ");
 //        Car lada = new Car("Lada", "Granta", 1.7, ivan, Car.BodyType.BODY_S);
         Car audi = new Car("Audi", "A8 50 L TDI quattro", 3.0, vova, Car.BodyType.BODY_V);
 //        Car bmv = new Car("BMW", "Z8", 3.0, zuric, Car.BodyType.BODY_K);
@@ -29,22 +29,38 @@ public class Main {
         audi.printType();
         kamaz.printInfo();
         kamaz.printType();
-        getDiagnosed(audi, kamaz, paz);
+        autoDiagnosed(audi, kamaz, paz);
+        rightsCheckDrivers(vova, oleg, boris);
     }
 
-    public static void getDiagnosed(Transport... auto) {
+    public static void autoDiagnosed(Transport... auto) {
         for (Transport element : auto) {
             try {
-                element.getDiagnosed();
+                element.diagnosed();
             } catch (RuntimeException e) {
                 System.out.println(" Произошла ошибка ");
                 System.out.println(e.getMessage());
-            }
-            finally {
+            } finally {
                 System.out.println("Проверка завершена");
             }
         }
     }
+
+    public static void rightsCheckDrivers(Driver... driver) throws CantDriveException {
+        int count = 0;
+        try {
+            for (Driver element : driver) {
+                element.isDriverLicense();
+                count++;
+            }
+        } catch (CantDriveException e) {
+            System.out.println(" Произошла ошибка водитель " + e.getDriver().getName() + "  не имеет прав.");
+            System.out.println(e.getMessage());
+        } finally {
+            System.out.println("Проверка завершена. Из рассмотренных. " + count + " водителей имеют права.");
+        }
+    }
 }
+
 
 

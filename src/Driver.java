@@ -3,17 +3,15 @@ public abstract class Driver {
     public boolean driverLicense;
     private String experience;
 
+
+
     public Driver(String name, boolean driverLicense, String experience) {
         if (name == null || name.isEmpty() || name.isBlank()) {
             this.name = "default";
         } else {
             this.name = name;
         }
-        if (driverLicense == true) {
-            this.driverLicense = driverLicense;
-        } else if (driverLicense == false) {
-            throw new RuntimeException(" Необходимо указать тип прав! .");
-        }
+        this.driverLicense = driverLicense;
         if (experience == null || experience.isEmpty() || experience.isBlank()) {
             this.experience = "default";
         } else {
@@ -44,6 +42,18 @@ public abstract class Driver {
     public abstract void stopMove();
 
     public abstract void refuel();
+    public boolean isDriverLicense() throws CantDriveException {
+        if (driverLicense == true) {
+            this.driverLicense = driverLicense;
+        } else if (driverLicense == false ) {
+            throw new CantDriveException(" Необходимо указать тип прав! .",this);
+        }
+        return driverLicense;
+    }
+
+    public void setDriverLicense(boolean driverLicense) {
+        this.driverLicense = driverLicense;
+    }
 
     @Override
     public String toString() {

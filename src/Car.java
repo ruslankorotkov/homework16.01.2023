@@ -27,7 +27,6 @@ public class Car extends Transport<DriverB> {
     public Car(String brand, String model, double engineVolume, DriverB driver, BodyType bodyType) {
         super(brand, model, engineVolume, driver);
         this.bodyType = bodyType;
-
     }
 
     @Override
@@ -48,8 +47,8 @@ public class Car extends Transport<DriverB> {
     }
 
     @Override
-    public void getDiagnosed() {
-        System.out.println(" Пройти диагностику " + getBrand());
+    public void diagnosed() {
+        System.out.println(" Проходит диагностику " + getBrand());
     }
 
 

@@ -56,9 +56,8 @@ public class Bus extends Transport<DriverD> {
         System.out.println("Данные по транспортному средству АВТОБУС " + super.toString() + " вместимость " + places + " .");
     }
 
-
     @Override
-    public void getDiagnosed() {
+    public void diagnosed() {
         throw new RuntimeException(" Автобусы диагностику проходить не могут ");
     }
 
