@@ -1,12 +1,12 @@
 public class Main {
     public static void main(String[] args) {
-//        DriverB ivan = new DriverB(" Иван ", true, " 6 лет ");
+        DriverB ivan = new DriverB(" Иван ", true, " 6 лет ");
         DriverB vova = new DriverB(" Вова ", true, " 32 лет ");
 //        DriverB zuric = new DriverB(" Зурик ", true, " 3 лет ");
 //        DriverB nik = new DriverB(" Николай ", true, " 6 лет ");
         DriverC oleg = new DriverC(" Олег ", true, " 5 лет ");
         DriverD boris = new DriverD(" Борис ", false, " 7 лет ");
-//        Car lada = new Car("Lada", "Granta", 1.7, ivan, Car.BodyType.BODY_S);
+        Car lada = new Car("Lada", "Granta", 1.7, ivan, Car.BodyType.BODY_S);
         Car audi = new Car("Audi", "A8 50 L TDI quattro", 3.0, vova, Car.BodyType.BODY_V);
 //        Car bmv = new Car("BMW", "Z8", 3.0, zuric, Car.BodyType.BODY_K);
 //        Car kia = new Car("Kia", "Sportage 4-го поколения", 2.4, nik, Car.BodyType.BODY_U);
@@ -30,7 +30,7 @@ public class Main {
         kamaz.printInfo();
         kamaz.printType();
         autoDiagnosed(audi, kamaz, paz);
-        rightsCheckDrivers(vova, oleg, boris);
+        rightsCheckDrivers(vova, oleg, boris,ivan);
     }
 
     public static void autoDiagnosed(Transport... auto) {
