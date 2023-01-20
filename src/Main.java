@@ -1,5 +1,5 @@
 public class Main {
-    public static void main(String[] args) throws CantDriveException {
+    public static void main(String[] args) {
 //        DriverB ivan = new DriverB(" Иван ", true, " 6 лет ");
         DriverB vova = new DriverB(" Вова ", true, " 32 лет ");
 //        DriverB zuric = new DriverB(" Зурик ", true, " 3 лет ");
@@ -46,7 +46,7 @@ public class Main {
         }
     }
 
-    public static void rightsCheckDrivers(Driver... driver) throws CantDriveException {
+    public static void rightsCheckDrivers(Driver... driver)  {
         int count = 0;
         try {
             for (Driver element : driver) {
